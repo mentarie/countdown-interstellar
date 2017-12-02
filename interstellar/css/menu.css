@@ -1,0 +1,229 @@
+#menucont #menu #mobiletitle
+{
+	display: none;
+}
+
+/** Top level **/
+
+#menucont #menu *
+{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+	#menucont #menu ul#fullmenucont
+	{
+		float: right;
+	}
+	
+		#menucont #menu ul#fullmenucont li
+		{
+			position: relative;
+			float: left;
+			list-style-type: none;
+		}
+
+			#menucont #menu ul#fullmenucont a
+			{
+				float: left;
+				line-height: 46px;
+				padding: 0 12px;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				color: #444;
+			}
+			
+			#menucont #menu ul#fullmenucont li.active a,
+			#menucont #menu ul#fullmenucont a:hover,
+			#menucont #menu ul#fullmenucont li:hover > a
+			{
+				color: #e74c3c;
+			}
+			
+				#menucont #menu ul#fullmenucont a span
+				{
+					padding: 0 0 0 10px;
+					color: #e74c3c;
+				}
+
+/** Second level **/
+
+#menucont #menu ul#fullmenucont ul
+{
+	position: absolute;
+	margin: 0;
+	padding: 20px 0 0 0;
+	visibility: hidden;
+	top: 43px;
+	left: 0;
+	z-index: 99999;
+	opacity: 0;
+	
+    -webkit-transition: visibility 0s ease-out 0.2s, opacity 0.2s ease-out, top 0.2s ease-out;
+    -moz-transition: visibility 0s ease-out 0.2s, opacity 0.2s ease-out, top 0.2s ease-out;
+    -o-transition: visibility 0s ease-out 0.2s, opacity 0.2s ease-out, top 0.2s ease-out;
+    transition: visibility 0s ease-out 0.2s, opacity 0.2s ease-out, top 0.2s ease-out;
+}
+
+	#menucont #menu ul#fullmenucont li:not(:hover).hasChild ul
+	{
+		visibility: hidden;
+		top: 43px;
+	}
+
+	#menucont #menu ul#fullmenucont li:hover.hasChild ul
+	{
+		visibility: visible;
+		top: 40px;
+		opacity: 1;
+
+		-webkit-transition-delay: 0s;
+		transition-delay: 0s;
+	}
+
+		#menucont #menu ul#fullmenucont ul a
+		{
+			position: relative;
+			padding: 10px 12px;
+			width: 240px;
+			height: auto;
+			line-height: 18px;
+			background: #e74c3c;
+			color: #FFF;
+			font-size: 86%;
+		}
+		
+			#menucont #menu ul#fullmenucont ul a:hover,
+			#menucont #menu ul#fullmenucont ul li:hover > a
+			{
+				background: #c0392b;
+				color: #FFF;
+			}
+			
+	/** CSS Arrow **/
+	
+	#menucont #menu ul#fullmenucont ul li:first-child a:after
+	{
+		bottom: 100%;
+		left: 60px;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(26,188,156,0);
+		border-bottom-color: #e74c3c;
+		border-width: 12px;
+		margin-left: -12px;
+	}
+
+/** Responsive Menu **/
+
+.mean-container .mean-bar
+{
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+.mean-container a.meanmenu-reveal
+{
+	position: absolute;
+	display: block;
+	top: -31px;
+	right: 0;
+	width: auto;
+	cursor: pointer;
+}
+
+	.mean-container a.meanmenu-reveal span
+	{
+		clear: both;
+		float: left;
+		display: block;
+		font-size: 24px;
+		color: #e74c3c;
+	}
+
+.mean-container .mean-nav
+{
+	float: left;
+	width: 100%;
+}
+
+	.mean-container .mean-nav ul
+	{
+		width: 100%;
+		margin: 0;
+	}
+	
+	.mean-container .mean-nav > ul
+	{
+		float: left;
+		width: 100%;
+		margin: 0 0 15px 0;
+	}
+	
+		.mean-container .mean-nav ul li
+		{
+			position: relative;
+			float: left;
+			display: block;
+			width: 100%;
+			font-weight: 400;
+			list-style-type: none;
+		}
+		
+			.mean-container .mean-nav > ul > li:first-child
+			{
+				padding-top: 20px;
+			}
+		
+				.mean-container .mean-nav ul li a
+				{
+					float: left;
+					width: 100%;
+					padding: 2px 15px 2px 0;
+					text-transform: uppercase;
+					color: #444;
+				}
+				
+					.mean-container .mean-nav ul ul li a
+					{
+						padding: 0 0 0 10px;
+					}
+							
+					.mean-container .mean-nav a span
+					{
+						display: none;
+					}
+		
+					.mean-container .mean-nav ul li a:hover
+					{
+						color: #e74c3c;
+					}
+
+.mean-container .mean-nav ul li a.mean-expand,
+.mean-expand mean-clicked
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: auto;
+	border: none !important;
+	padding: 2px 0 !important;
+	font-size: 22px !important;
+	font-family: inherit;
+	text-align: center;
+	z-index: 2;
+	font-weight: 400;
+	color: #e74c3c;
+}
+
+	.mean-container .mean-nav ul > li:hover > a.mean-expand
+	{
+		color: #fff;
+	}
+
